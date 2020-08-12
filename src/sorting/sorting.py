@@ -27,13 +27,18 @@ def merge(a, b):
 
 # TO-DO: implement the Merge Sort function below recursively
 def merge_sort(arr):
-    if len(arr) > 1:
-        mid_point = len(arr)//2
-        LHS = arr[ :mid_point]
-        RHS = arr[mid_point: ]
+    mid_point = len(arr)//2
+    LHS = arr[ :mid_point]
+    RHS = arr[mid_point: ]
+    
+    if len(LHS) > 1:
         left = merge_sort(LHS)
+    
+    if len(RHS) > 1:
         right = merge_sort(RHS)
-        arr = merge(left, right)
+    
+    arr = merge(left, right)
+    
     return arr 
 
 # STRETCH: implement the recursive logic for merge sort in a way that doesn't 
